@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:55:05 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/16 17:45:49 by zel-ghab         ###   ########.fr       */
+/*   Created: 2024/10/17 15:29:41 by zel-ghab          #+#    #+#             */
+/*   Updated: 2024/11/16 18:21:09 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-typedef struct s_env
+char	*ft_strchr(const char *s, int c)
 {
-	char		*name;
-	char		*value;
-	struct s_env	*next;
-}			t_env;
+	int		i;
+	char	cc;
 
-#endif
+	cc = (char)c;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == cc)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (cc == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
+}

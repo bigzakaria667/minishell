@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:55:05 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/16 17:45:49 by zel-ghab         ###   ########.fr       */
+/*   Created: 2024/10/11 13:46:27 by zel-ghab          #+#    #+#             */
+/*   Updated: 2024/11/12 19:28:24 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-typedef struct s_env
+size_t	ft_strlen(const char *str)
 {
-	char		*name;
-	char		*value;
-	struct s_env	*next;
-}			t_env;
+	size_t	len;
 
-#endif
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}

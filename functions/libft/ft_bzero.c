@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:55:05 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/16 17:45:49 by zel-ghab         ###   ########.fr       */
+/*   Created: 2024/10/11 14:11:51 by zel-ghab          #+#    #+#             */
+/*   Updated: 2024/10/29 17:57:20 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-typedef struct s_env
+void	ft_bzero(void *s, size_t n)
 {
-	char		*name;
-	char		*value;
-	struct s_env	*next;
-}			t_env;
+	size_t		i;
 
-#endif
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)s)[i] = 0;
+		i++;
+	}
+}
+/*
+int	main()
+{
+	char str[] = "Zakaria";
+	size_t n = 4;
+	ft_bzero(str, n);
+	printf("%s\n", str);
+}
+*/

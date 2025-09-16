@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:55:05 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/16 17:45:49 by zel-ghab         ###   ########.fr       */
+/*   Created: 2024/10/18 13:08:06 by zel-ghab          #+#    #+#             */
+/*   Updated: 2024/11/16 18:12:04 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-typedef struct s_env
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char		*name;
-	char		*value;
-	struct s_env	*next;
-}			t_env;
+	size_t			i;
+	unsigned char	uc;
 
-#endif
+	uc = (unsigned char)c;
+	i = 0;
+	while (i < n)
+	{
+		if (((unsigned char *)s)[i] == uc)
+			return ((void *)s + i);
+		i++;
+	}
+	return (NULL);
+}

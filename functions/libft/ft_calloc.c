@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:55:05 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/16 17:45:49 by zel-ghab         ###   ########.fr       */
+/*   Created: 2024/10/22 18:40:14 by zel-ghab          #+#    #+#             */
+/*   Updated: 2024/10/29 18:38:06 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-typedef struct s_env
+void	*ft_calloc(size_t count, size_t size)
 {
-	char		*name;
-	char		*value;
-	struct s_env	*next;
-}			t_env;
+	unsigned char	*arr;
+	size_t			i;
 
-#endif
+	i = 0;
+	arr = malloc (count * size);
+	if (!arr)
+		return (NULL);
+	while (i < count * size)
+	{
+		arr[i] = 0;
+		i++;
+	}
+	return (arr);
+}

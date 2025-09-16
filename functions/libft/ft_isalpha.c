@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:55:05 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/16 17:45:49 by zel-ghab         ###   ########.fr       */
+/*   Created: 2024/10/09 18:04:57 by zel-ghab          #+#    #+#             */
+/*   Updated: 2024/11/12 18:29:23 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-typedef struct s_env
+int	ft_isalpha(int a)
 {
-	char		*name;
-	char		*value;
-	struct s_env	*next;
-}			t_env;
+	if ((a >= 97 && a <= 122) || (a >= 65 && a <= 90))
+		return (1);
+	else
+		return (0);
+}
+/*
+int	main ()
+{
+	char *str [] = "Zakaria";
 
-#endif
+}
+*/
