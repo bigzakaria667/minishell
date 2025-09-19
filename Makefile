@@ -6,7 +6,7 @@
 #    By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 18:22:13 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/09/16 19:06:52 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/09/19 18:44:41 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 
 NAME 		= minishell
 CC		= cc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 
 ###########################################
 ## LIBRARIES
