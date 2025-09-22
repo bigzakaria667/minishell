@@ -6,7 +6,7 @@
 /*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 17:46:55 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/22 19:48:59 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/09/22 19:51:07 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,6 @@ int	envp_into_list(char **envp, t_shell **shell)
 	}
 	return (0);
 }
-
 
 int	main(int argc, char **argv, char **envp)
 {
