@@ -6,7 +6,7 @@
 /*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 17:46:55 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/22 19:36:34 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/09/22 19:41:28 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,18 +123,19 @@ int	main(int argc, char **argv, char **envp)
 	char	*input;
 
 	(void)argc;
+	(void)argv;
 	init_shell(&shell);
 	if (!shell)
 		return (1);
+	if (envp_into_list(envp, &shell) == 1)
+		return (printf("Error\n") ,1);
 	while (1)
 	{
 		input = readline("minishell> ");
 		if (!input)
 			break;
-		if (envp_into_list(envp, &shell) == 1)
-			return (printf("Error") ,1);
-		if (built_in(argv[1], &shell) == 1)
-			return (printf("Error") ,1);
+		if (built_in(input, &shell) == 1)
+			return (printf("Error\n") ,1);
 		free(input);
 	}
 	return (0);
