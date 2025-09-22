@@ -6,7 +6,7 @@
 /*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:55:05 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/22 17:05:21 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/09/22 18:57:04 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
+# include <readline/readline.h>
+# include <readline/history.h>
 
 typedef struct s_shell
 {

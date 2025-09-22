@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 18:22:13 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/09/19 18:44:41 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/09/22 19:10:44 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,9 @@ CFLAGS		= -Wall -Wextra -Werror -g
 
 LIBFT         = ./functions/libft
 
+
 IFLAGS        = -I $(LIBFT)
-LDFLAGS       = -L $(LIBFT) -lft
+LDFLAGS       = -L $(LIBFT) -lft -lreadline -lncurses
 
 ###########################################
 ## SOURCES
@@ -63,15 +64,4 @@ fclean : clean
 
 re : fclean all
 
-###########################################
-## CUSTOM COMMANDS
-
-linux:
-	@$(MAKE) fclean
-	@$(MAKE) all OS=LINUX
-
-mac:
-	@$(MAKE) fclean
-	@$(MAKE) all OS=MAC
-
-.PHONY: all clean fclean re linux mac $(NAME)
+.PHONY: all clean fclean re $(NAME)
