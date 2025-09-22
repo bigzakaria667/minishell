@@ -6,7 +6,7 @@
 /*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 17:46:55 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/22 19:41:28 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/09/22 19:48:59 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,21 +52,19 @@ int	built_in(char *s, t_shell **shell)
 
 	error = check_built_in(s);
 	if (error == 0)
-		return (printf("echo"));
+		printf("echo\n");
 	if (error == 1)
-		return (printf("cd"));
+		printf("cd\n");
 	if (error == 2)
-		return (printf("pwd"));
+		printf("pwd\n");
 	if (error == 3)
-		return (printf("export"));
+		printf("export\n");
 	if (error == 4)
-		return (printf("unset"));
+		printf("unset\n");
 	if (error == 5)
-		return (print_list(*shell), 0);	
+		print_list(*shell), 0;	
 	if (error == 6)
-		return (printf("exit"));
-	else
-		return (1);
+		printf("exit\n");
 	return (0);
 }
 
