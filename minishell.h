@@ -6,7 +6,7 @@
 /*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:55:05 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/19 18:41:03 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/09/22 17:05:21 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "functions/libft/libft.h"
 # include <stdlib.h>
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_shell
 {
