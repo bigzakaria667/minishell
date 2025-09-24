@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 18:22:13 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/09/22 19:10:44 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/09/24 18:14:58 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,12 @@ LDFLAGS       = -L $(LIBFT) -lft -lreadline -lncurses
 ###########################################
 ## SOURCES
 
-SRC_FILES	= built_in.c
+SRC_FILES	= built_in.c \
+		list.c \
+		init.c \
+		ft_env.c \
+		ft_pwd.c \
+		ft_exit.c
 
 ###########################################
 ## OBJECTS

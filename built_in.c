@@ -3,26 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   built_in.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 17:46:55 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/22 19:51:07 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/09/24 18:11:57 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-void	print_list(t_shell *shell)
-{
-	t_env	*current;
-
-	current = shell->envp;
-	while (current)
-	{
-		printf("%s=%s\n", current->name, current->value);
-		current = current->next;
-	}
-}
 
 int	check_built_in(char *s)
 {
@@ -39,14 +27,14 @@ int	check_built_in(char *s)
 	built_in[6] = "exit";
 	while (i <= 6)
 	{
-		if (ft_strncmp(s, built_in[i], INT_MAX) == 0)
+		if (ft_strncmp(s, built_in[i], ft_strlen(built_in[i])) == 0)
 			return (i);
 		i++;
 	}
 	return (-1);
 }
 
-int	built_in(char *s, t_shell **shell)
+int	built_in(char *s, char**envp, t_shell **shell)
 {
 	int	error;
 
@@ -56,38 +44,16 @@ int	built_in(char *s, t_shell **shell)
 	if (error == 1)
 		printf("cd\n");
 	if (error == 2)
-		printf("pwd\n");
+		ft_pwd(envp);
 	if (error == 3)
 		printf("export\n");
 	if (error == 4)
 		printf("unset\n");
 	if (error == 5)
-		print_list(*shell), 0;	
+		ft_env(s, (*shell)->envp);
 	if (error == 6)
-		printf("exit\n");
+		ft_exit(s);
 	return (0);
-}
-
-void	init_node(t_env **node)
-{
-	*node = malloc(sizeof(t_env));
-	if (!(*node))
-		return ;
-	(*node)->name = NULL;
-	(*node)->value = NULL;
-	(*node)->next = NULL;
-}
-
-void	insert_node(t_env **node, char *name, char *value)
-{
-	(*node)->name = ft_strdup(name);
-	(*node)->value = ft_strdup(value);
-}
-
-void	init_shell(t_shell **shell)
-{
-	*shell = malloc(sizeof(t_shell));
-	(*shell)->envp = NULL;
 }
 
 int	envp_into_list(char **envp, t_shell **shell)
@@ -131,7 +97,7 @@ int	main(int argc, char **argv, char **envp)
 		input = readline("minishell> ");
 		if (!input)
 			break;
-		if (built_in(input, &shell) == 1)
+		if (built_in(input, envp, &shell) == 1)
 			return (printf("Error\n") ,1);
 		free(input);
 	}
