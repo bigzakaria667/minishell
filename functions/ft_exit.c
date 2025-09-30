@@ -6,11 +6,11 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:39:56 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/24 19:52:09 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/09/30 17:20:51 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../minishell.h"
 
 int	count_args(char	**split)
 {
@@ -50,27 +50,6 @@ int	check_is_digit(char *s)
 	return (1);
 }
 
-char 	*delete_quote(char *s)
-{
-	int	i;
-	int	len;
-	char	*s_no_quote;
-
-	i = 0;
-	len = ft_strlen(s);
-	if ((s[0] == '"' && s[len - 1] == '"') || (s[0] == '\'' && s[len - 1] == '\''))
-	{
-		s_no_quote = malloc(sizeof(char) + len - 2 + 1);
-		while (i < len - 2)
-		{
-			s_no_quote[i] = s[i + 1];
-			i++;
-		}
-		return (s_no_quote);
-	}
-	return (s);
-}
-
 void	ft_exit(char *s)
 {
 	char	**split;
@@ -82,7 +61,6 @@ void	ft_exit(char *s)
 		exit(0);
 	else if (args == 2)
 	{
-		split[1] = delete_quote(split[1]);
 		if (check_is_digit(split[1]) == 1)
 			exit(ft_atoi(split[1]));
 		else if (check_is_alpha(split[1]) == 1)

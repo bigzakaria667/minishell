@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 17:46:55 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/26 15:17:04 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/09/30 18:13:19 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	built_in(char *s, char**envp, t_shell **shell)
 	if (error == 2)
 		ft_pwd(envp);
 	if (error == 3)
-		printf("export\n");
+		ft_export(&(*shell)->envp);
 	if (error == 4)
 		printf("unset\n");
 	if (error == 5)
@@ -80,32 +80,10 @@ int	envp_into_list(char **envp, t_shell **shell)
 	return (0);
 }
 
-char	*find_path_home(char **envp)
-{
-	int	i;
-	char	*home;
-	char	*history;
-		
-	i = 0;
-	while (envp[i])
-	{
-		if (ft_strncmp("HOME", envp[i], 4) == 0)
-		{
-			home = envp[i];
-			break;
-		}
-		i++;
-	}
-	ft_strlcat("/.minishell_history", home, );
-	return (history);
-}
-
 int	main(int argc, char **argv, char **envp)
 {
 	t_shell	*shell;
 	char	*input;
-	char	*home_path;
-	char	*history_path;
 
 	(void)argc;
 	(void)argv;
@@ -114,15 +92,11 @@ int	main(int argc, char **argv, char **envp)
 		return (1);
 	if (envp_into_list(envp, &shell) == 1)
 		return (printf("Error\n") ,1);
-	home_path = find_path_home(envp);
-	read_history(home_path);
 	while (1)
 	{
 		input = readline("minishell> ");
 		if (!input)
 			break;
-		else
-			add_history(input);
 		if (built_in(input, envp, &shell) == 1)
 			return (printf("Error\n") ,1);
 		free(input);

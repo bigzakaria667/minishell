@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 18:22:13 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/09/24 18:14:58 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/09/30 18:06:54 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS		= -Wall -Wextra -Werror -g
 ###########################################
 ## LIBRARIES
 
-LIBFT         = ./functions/libft
+LIBFT         = ./libft
 
 
 IFLAGS        = -I $(LIBFT)
@@ -32,9 +32,10 @@ LDFLAGS       = -L $(LIBFT) -lft -lreadline -lncurses
 SRC_FILES	= built_in.c \
 		list.c \
 		init.c \
-		ft_env.c \
-		ft_pwd.c \
-		ft_exit.c
+		functions/ft_env.c \
+		functions/ft_pwd.c \
+		functions/ft_exit.c \
+		functions/ft_export.c
 
 ###########################################
 ## OBJECTS

@@ -6,14 +6,14 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:55:05 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/24 18:12:48 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/09/30 18:06:29 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-# include "functions/libft/libft.h"
+# include "libft/libft.h"
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
@@ -52,5 +52,7 @@ int	count_args(char	**split);
 int	check_is_alpha(char *s);
 int	check_is_digit(char *s);
 void	ft_exit(char *s);
+/*----------------  ft_export.c  ---------------*/
+void	ft_export(t_env **envp);
 
 #endif

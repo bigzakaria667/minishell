@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_echo.c                                          :+:      :+:    :+:   */
+/*   ft_env.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
+/*   By: zel-ghab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 17:48:59 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/25 17:56:05 by zel-ghab         ###   ########.fr       */
+/*   Created: 2025/09/24 18:09:56 by zel-ghab          #+#    #+#             */
+/*   Updated: 2025/09/30 17:21:25 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../minishell.h"
 
-void	ft_echo(char *s)
+void	ft_env(char *s, t_env *envp)
 {
-	if (ft_strlen(s) == 4)
-		printf();
+	if (ft_strlen(s) == 3)
+		print_list(envp);
 }

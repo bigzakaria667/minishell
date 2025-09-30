@@ -6,11 +6,11 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:08:01 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/09/24 16:35:01 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/09/30 17:21:39 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../minishell.h"
 
 void	ft_pwd(char **envp)
 {
@@ -20,7 +20,7 @@ void	ft_pwd(char **envp)
 	while (envp[i])
 	{
 		if (ft_strncmp("PWD", envp[i], 3) == 0)
-			printf("%s\n", envp[i]);
+			printf("%s\n", envp[i] + 4);
 		i++;
 	}
 }
